@@ -1,0 +1,245 @@
+.publication {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the container */
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+#bio {
+    margin-bottom: 55px;
+}
+
+.pub-image {
+    flex: 0 0 300px; /* Do not grow or shrink, fixed basis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pub-image img {
+    width: 100%;
+    max-width: 250px; /* Maximum width for images */
+    height: auto;
+}
+
+.pub-content {
+    flex-grow: 1; /* Allows content to take remaining space */
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px; /* Space between image and text content */
+    overflow: hidden; /* Prevents overflow outside the container */
+}
+
+.pub-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.pub-authors, .pub-venue {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px; /* Reduced bottom margin */
+}
+
+.pub-description {
+    font-size: 0.9em;
+    color: #333;
+    margin-top: auto; /* Pushes description to the bottom if space allows */
+    overflow: hidden; /* Prevents text overflow */
+}
+
+.pub-award {
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    margin-top: 10px; /* Space above the award tag */
+}
+
+.pub-links {
+    display: flex;
+    align-items: center; /* Center links vertically */
+    margin-top: 10px; /* Space above link icons */
+}
+
+.pub-links a {
+    text-decoration: none;
+    color: #0077cc;
+    margin-right: 10px;
+}
+
+.pub-links i {
+    font-size: 1.2em;
+}
+
+
+/* Other styles remain the same */
+
+
+.pub-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    line-height: 1.0;
+}
+
+.pub-authors {
+    margin: 0 0 5px 0;
+    color: #555;
+    line-height: 1.0;
+    margin-bottom: 10px;
+}
+
+.pub-venue {
+    font-weight: 500;
+    color: #666;
+    margin: 0 0 0 0;
+    line-height: 1.0;
+    margin-bottom: 6px;
+}
+
+.pub-description {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.0;
+}
+
+.pub-award {
+    display: inline-block;
+    background-color: #ffcc00; /* Bright color for the award tag */
+    color: #fff;
+    width: 65px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+.pub-links a {
+    text-decoration: none;
+    color: #0077cc; /* Blue color for icons */
+    margin-right: 10px;
+}
+
+.pub-links i {
+    font-size: 1.2em; /* Larger icons */
+}
+
+
+
+
+/* WEBSITE BODY */
+
+html {
+    height: 100%; /* Ensure html takes full height of the viewport */
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 350;
+    font-size: 0.9em;
+    color: #333;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column; /* Stack children elements vertically */
+    min-height: 100vh; /* Minimum height is full viewport height */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.sidebar {
+    width: 350px;
+    padding: 80px;
+    box-sizing: border-box;
+    position: fixed; /* Sidebar fixed on the side */
+    top: 0; /* Start from top */
+    bottom: 0; /* Extend to bottom */
+    overflow-y: auto; /* Scroll inside sidebar if content is long */
+}
+
+
+.main-content, .updates {
+    margin-left: 330px; /* Space for sidebar */
+    flex-grow: 1; /* Allow content areas to grow and push footer */
+    padding: 120px;
+    width: calc(65% - 360px); /* Adjusting width to prevent overflow */
+}
+
+.sidebar a {
+    display: block; /* Makes each link a block-level element */
+    margin-bottom: 10px; /* Optional: adds space between the links */
+}
+
+.updates {
+    padding: 80px;  /* Adds padding around the updates container */
+}
+
+.updates h2 {
+    margin-top: 65px;
+    margin-bottom: 20px;  /* Adds space below the Updates heading */
+}
+
+.update {
+    margin-bottom: 30px;  /* Adds space between each update block */
+}
+
+.update .update-title {
+    font-weight: 400;
+    margin-bottom: -5px;  /* Reduces space between the title and the description */
+}
+
+.update .update-desc {
+    margin-bottom: 0;  /* Eliminates extra margin below the description */
+}
+
+
+.updates {
+    width: calc(35% - 240px);
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-bottom: 30px;
+    overflow-y: auto;
+}
+
+#prof-img {
+    width: 180px; /* Set the width of the image */
+    height: 180px; /* Set the height of the image */
+    object-fit: cover; /* Ensures the image covers the set dimension without distortion */
+    border-radius: 50%; /* Optional: Makes the image round */
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: white;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Other styles remain the same */
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: static; /* Sidebar flows in document on mobile */
+        width: 100%;
+        padding: 20px;
+    }
+    .main-content, .updates {
+        margin-left: 0; /* Remove margin for mobile view */
+        padding: 20px;
+        width: 100%; /* Full width for mobile */
+    }
+    .updates {
+        position: static; /* Reset updates to flow in document */
+    }
+}
