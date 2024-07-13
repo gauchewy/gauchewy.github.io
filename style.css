@@ -250,3 +250,50 @@ footer {
         padding-left: 0; /* Removes left padding that was used when images were displayed */
     }
 }
+@media (max-width: 768px) {
+    .publication {
+        flex-direction: column; /* Stacks the children vertically */
+    }
+
+    .pub-image {
+        flex: 0 0 auto; /* Resets flex settings to adjust automatically based on content size */
+        width: 100%; /* Sets image container width to full width */
+        display: flex;
+        justify-content: center; /* Centers the image horizontally */
+    }
+
+    .pub-image img {
+        width: 90%; /* Adjust image width to be less than container for padding effect */
+        height: auto; /* Keeps image aspect ratio intact */
+        max-width: none; /* Overrides any max-width set elsewhere */
+    }
+
+    .pub-content {
+        flex-grow: 1; /* Allows content to take remaining space */
+        padding-left: 0; /* Removes left padding that was used when images were displayed side by side */
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        position: fixed; /* Fixes the header at its position in the viewport */
+        top: 0; /* Aligns the header at the top */
+        width: 100%; /* Ensures the header stretches across the full width of the viewport */
+        z-index: 1000; /* Keeps the header on top of other content */
+        background-color: white; /* Optional: sets a background color to ensure text is readable over page content */
+        padding: 20px;
+    }
+
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    margin-top: 0;
+}
+
+
