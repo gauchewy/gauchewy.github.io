@@ -31,6 +31,27 @@
     overflow: hidden; /* Prevents overflow outside the container */
 }
 
+.pub-links {
+    display: flex;
+    align-items: center; /* Centers the links vertically */
+    margin-top: 10px; /* Adds space above the link icons */
+}
+
+.pub-links a {
+    text-decoration: none;
+    color: #0077cc; /* Blue color for the links */
+    margin-right: 20px; /* Right margin for space between links */
+    padding: 8px; /* Padding to increase clickable area */
+    display: inline-block; /* Ensures padding and margin are applied correctly */
+    vertical-align: middle; /* Aligns links vertically in the middle if they wrap to multiple lines */
+}
+
+.pub-links i {
+    font-size: 1.5em !important; /* Size of the icons, making them larger and more visible */
+}
+
+
+
 .pub-title {
     font-size: 1.2em;
     font-weight: bold;
@@ -59,21 +80,7 @@
     margin-top: 10px; /* Space above the award tag */
 }
 
-.pub-links {
-    display: flex;
-    align-items: center; /* Center links vertically */
-    margin-top: 10px; /* Space above link icons */
-}
 
-.pub-links a {
-    text-decoration: none;
-    color: #0077cc;
-    margin-right: 10px;
-}
-
-.pub-links i {
-    font-size: 1.2em;
-}
 
 
 /* Other styles remain the same */
