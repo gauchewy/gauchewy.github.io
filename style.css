@@ -242,4 +242,11 @@ footer {
     .updates {
         position: static; /* Reset updates to flow in document */
     }
+    .pub-image {
+        display: none; /* Hides the image section on small screens */
+    }
+    .pub-content {
+        flex-grow: 1; /* Allows the content to expand to fill the space left by the hidden image */
+        padding-left: 0; /* Removes left padding that was used when images were displayed */
+    }
 }
