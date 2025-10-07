@@ -26,7 +26,7 @@ body {
 body {
   display: grid;
   grid-template-columns: var(--sidebar-w) minmax(0, 1fr) var(--updates-w);
-  grid-template-rows: auto 1fr auto;              /* header space, page, footer */
+  grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "sidebar main updates"
     "sidebar main updates"
@@ -73,6 +73,13 @@ body {
 .update { margin-bottom: 18px; }
 .update .update-title { font-weight: 400; margin: 0 0 2px 0; }
 .update .update-desc { margin: 0; }
+
+/* Updates inline (inside main-content) - hidden on desktop */
+.updates-inline {
+  display: none;
+  margin-bottom: 55px;
+}
+.updates-inline h2 { margin: 0 0 20px 0; }
 
 /* ===== PUBLICATIONS =====
    Compact, no mysterious tall gaps, image left / text right.
@@ -150,37 +157,36 @@ footer {
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
-/* <= 1200px: 2 columns (sidebar | main), updates drops below main (still separate) */
-@media (max-width: 1200px) {
+/* <= 1400px: Switch to 2-column, hide sidebar updates, show inline updates */
+@media (max-width: 1400px) {
   body {
-    grid-template-columns: var(--sidebar-w) minmax(0,1fr);
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
     grid-template-areas:
       "sidebar main"
-      "sidebar updates"
+      "sidebar main"
       "footer  footer";
   }
   .updates {
-    position: static;
-    max-height: none;
-    padding-top: 0;
+    display: none;
+  }
+  .updates-inline {
+    display: block;
   }
 }
 
-/* <= 900px: 1 column stack; all flows top-to-bottom. */
-@media (max-width: 900px) {
+/* <= 1050px: 1 column stack; all flows top-to-bottom. */
+@media (max-width: 1050px) {
   body {
     grid-template-columns: 1fr;
     grid-template-areas:
       "sidebar"
       "main"
-      "updates"
       "footer";
   }
-  .sidebar, .main-content, .updates {
+  .sidebar, .main-content {
     padding: var(--pad-sm);
   }
   .sidebar { position: static; height: auto; }
-  .updates { margin-top: 0; }
   /* Publications stack image over text */
   .publication {
     grid-template-columns: 1fr;
